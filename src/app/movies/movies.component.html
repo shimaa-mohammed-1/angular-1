@@ -1,0 +1,27 @@
+
+  <input class="form-control w-50 mx-auto my-4" [(ngModel)]="word">
+  <!-- <h2  class="text-white">{{word}}</h2> -->
+
+<div class="row mt-3">
+
+  <div class="col-md-4">
+    <div class="brdr w-25"></div>
+    <h2 class="py-2">
+      Trending<br>movie<br>towath
+    </h2>
+
+    <div class="brdr w-50"></div>
+  </div>
+
+
+  <div class="col-md-2" *ngFor="let movie of trendingmovies|search:word">
+    <div  class="movie my-2  position-relative" [routerLink]="['/moviedtdetails',movie.media_type,movie.id]">
+      <img [src]="imgprefix+movie.poster_path"  class="img-fluid" alt="">
+    <h3 class="h6 my-2">{{movie.title}}{{movie.name}}</h3>
+    <div class="vote">{{movie.vote_average}}</div>
+
+    </div>
+
+  </div>
+
+</div>

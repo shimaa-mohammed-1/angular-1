@@ -1,0 +1,22 @@
+<div class="row mt-3">
+
+  <div class="col-md-4">
+    <div class="brdr w-25"></div>
+    <h2 class="py-2">
+      Trending<br>movie<br>towath
+    </h2>
+
+    <div class="brdr w-50"></div>
+  </div>
+
+
+  <div class="col-md-2" *ngFor="let tv of trendingtv">
+    <div  class="movie my-2  position-relative">
+      <img [src]= "imgprefix + tv.poster_path"  class="img-fluid" alt="">
+    <h3 class="h6 my-2">{{tv.title}}{{tv.name}}</h3>
+    <div class="vote">{{tv.vote_average}}</div>
+    </div>
+
+  </div>
+
+</div>

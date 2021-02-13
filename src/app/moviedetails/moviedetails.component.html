@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-5">
+    <img class="img-fluid" [src]="imgprefix+ details?.poster_path">
+  </div>
+
+  <div class="col-md-6 offset-1">
+    <h2  class="m-3">{{details?.title}}{{details?.name}}</h2>
+    <p class="m-2">{{details?.tagline}}</p>
+    <span class="bg-info  rounded  m-1  p-2" *ngFor="let  gen of details?.genres">{{gen.name}}</span>
+    <p class="my-2">vote average: {{details?.vote_average}}</p>
+    <p class="my-2" >vote count : {{details?.vote_count}}</p>
+    <p>{{details?.overview}}</p>
+
+  </div>
+</div>

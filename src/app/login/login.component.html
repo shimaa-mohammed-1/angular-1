@@ -1,0 +1,34 @@
+<h3 class="pt-3">Login Form</h3>
+
+<div  *ngIf = "flag" class="alert alert-danger" role="alert">
+  <h5 class="alert-heading">{{errorMessage}}</h5>
+</div>
+
+<form [formGroup]="loginForm" (ngSubmit)="viewData(loginForm)" class="w-60 m-auto  p-4">
+  
+  <div class="form-group">
+    <label for="">Email:</label>
+    <input type="email" name="" id=""[class.is-valid]="loginForm.get('email').errors == null  &&
+    loginForm.get('email').touched" formControlName="email" class="form-control" formControlName="email" placeholder="" aria-describedby="helpId">
+    <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('email').errors!=null  &&
+    loginForm.get('email').touched">
+      <h5 class="alert-heading">Enter valid email</h5>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="">Password:</label>
+    <input type="password" name="" id=""[class.is-valid]="loginForm.get('password').errors == null  &&
+    loginForm.get('password').touched" class="form-control" formControlName="password" placeholder="" aria-describedby="helpId">
+    <div class="alert alert-danger" role="alert"*ngIf="loginForm.get('password').errors!=null  &&
+    loginForm.get('password').touched">
+      <h5 class="alert-heading">Enter valid password</h5>
+      <p>start with capital letter</p>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!loginForm.valid" class="btn  btn-info">Submit</button>
+
+
+  </form>
